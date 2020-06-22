@@ -14,7 +14,7 @@ users:
     shell: /bin/bash
     ssh-authorized-keys:
      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUlbveok225A25wWaDTwO7XE0n/8qBHohh2uEYySVKyjp5+/0rB+Zo3C7vey8F2w6SYAeg08LQ81FlLFsJenXqHjw9iZ3vObVnLV13AJ5IDeUYyUDf4HPAi/iFQxYWcAfisIJZhWgp+eZpe8I1rxt2o92KNFvB6fJvVGMb/UVSjxCAmVo4VgP1SWhQza4gOIJg05UsDUbxtIFm1RjOQKvINdD/4Di3CGpmRv9AtujUA6PtN5YWl4P0WHm8YQ8JdoBs1Jy8FtHWmMpJSPSa/paiZ+7Yniz7U7QriVxlv2JAzFenZKkmsTHtKMpQnoxBxxqn2+P3ktt3d2XsU5K1F4V/ appuser"
-     
+
 bootcmd:
   - "wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -"
   - "add-apt-repository 'deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse'"

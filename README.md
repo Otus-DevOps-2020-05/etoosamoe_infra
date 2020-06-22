@@ -3,8 +3,8 @@ etoosamoe Infra repository
 
 ## ДЗ №3 ycloud infra
 
-``bastion`` ext: 84.201.173.68 int: 10.130.0.6  
-``someinternalhost`` int: 10.130.0.19  
+``bastion`` ext: 84.201.173.68 int: 10.130.0.6
+``someinternalhost`` int: 10.130.0.19
 ``84.201.173.68.xip.io``
 
 ### Задания
