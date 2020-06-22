@@ -1,0 +1,36 @@
+#cloud-config
+disable_root: true
+timezone: Europe/Moscow
+repo_update: true
+repo_upgrade: true
+apt:
+  preserve_sources_list: true
+  sources:
+
+users:
+  - default
+  - name: yc-user
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh-authorized-keys:
+     - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUlbveok225A25wWaDTwO7XE0n/8qBHohh2uEYySVKyjp5+/0rB+Zo3C7vey8F2w6SYAeg08LQ81FlLFsJenXqHjw9iZ3vObVnLV13AJ5IDeUYyUDf4HPAi/iFQxYWcAfisIJZhWgp+eZpe8I1rxt2o92KNFvB6fJvVGMb/UVSjxCAmVo4VgP1SWhQza4gOIJg05UsDUbxtIFm1RjOQKvINdD/4Di3CGpmRv9AtujUA6PtN5YWl4P0WHm8YQ8JdoBs1Jy8FtHWmMpJSPSa/paiZ+7Yniz7U7QriVxlv2JAzFenZKkmsTHtKMpQnoxBxxqn2+P3ktt3d2XsU5K1F4V/ appuser"
+     
+bootcmd:
+  - "wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -"
+  - "add-apt-repository 'deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse'"
+
+package_update: true
+
+packages:
+  - git
+  - ruby-full
+  - ruby-bundler
+  - build-essential
+  - mongodb-org
+
+runcmd:
+  - [ systemctl, enable, mongod.service ]
+  - [ systemctl, start, --no-block, mongod.service ]
+  - [ sh, -c, "git clone -b monolith https://github.com/express42/reddit.git /home/yc-user/reddit" ]
+  - [ sh, -c, "cd /home/yc-user/reddit && bundle install" ]
+  - [ sh, -c, "cd /home/yc-user/reddit && puma -d -p 3030" ]
