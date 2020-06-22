@@ -41,8 +41,8 @@ someinternalhost_IP = 10.130.0.19
 ## ДЗ№4 Деплой тестового приложения в облако
 
 ```
-testapp_IP = 130.193.51.219
-testapp_port = 3030
+testapp_IP=130.193.51.219
+testapp_port=3030
 ```
 
 ```

@@ -2,7 +2,7 @@
 
 apt-get install -y git
 
-git clone -b monolith https://github.com/express42/reddit.git /home/yc-user/
+git clone -b monolith https://github.com/express42/reddit.git /home/yc-user/reddit
 
 cd /home/yc-user/reddit && bundle install
 
