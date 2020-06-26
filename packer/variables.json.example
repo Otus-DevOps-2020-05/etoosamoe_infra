@@ -1,11 +1,10 @@
 {
-    "cloud_folder_id": "folder_id_here",
+    "cloud_folder_id": "cloudfolderid",
     "service_account_key_file_path": "files/key.json",
     "source_image_family_name": "ubuntu-1604-lts",
 
-    "image_name": "my-image-name-{{timestamp}}",
-    "image_family": "my-image-family",
-    "image_description": "image description",
+    "image_name": "reddit-base-{{timestamp}}",
+    "image_family": "reddit",
 
-    "ssh_username": "username"
+    "ssh_username": "ubuntu"
 }
