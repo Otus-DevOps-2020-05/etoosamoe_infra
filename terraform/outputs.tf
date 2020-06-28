@@ -1,12 +1,9 @@
 output "external_ip_address_app" {
-  value = yandex_compute_instance.app.network_interface.0.nat_ip_address
+  value = yandex_compute_instance.app.*.network_interface.0.nat_ip_address
 }
-output "application_name" {
-  value = yandex_compute_instance.app.name
+output "internal_ip_adress_app" {
+  value = yandex_compute_instance.app.*.network_interface.0.ip_address
 }
-output "instance_hostname" {
-  value = yandex_compute_instance.app.hostname
-}
-output "instance_external_ip" {
-  value = "data.yandex_compute_instance_group.my_group.instances.*.network_interface.0.nat_ip_address"
+output "load_balancer_ext_ip" {
+  value = yandex_lb_network_load_balancer.reddit_lb.listener.*.external_address_spec.0.address
 }

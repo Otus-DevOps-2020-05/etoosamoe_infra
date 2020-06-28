@@ -9,6 +9,10 @@ variable zone {
   # Значение по умолчанию
   default = "ru-central1-a"
 }
+variable lb_count {
+  description = "Balancer Count"
+  default     = "1"
+}
 variable public_key_path {
   # Описание переменной
   description = "Path to the public key used for ssh access"
