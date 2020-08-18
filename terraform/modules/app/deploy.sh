@@ -2,7 +2,8 @@
 set -e
 APP_DIR=${1:-$HOME}
 sleep 1m
-sudo apt-get install -y git
+sudo apt-get update
+sudo apt-get install -y git python
 git clone -b monolith https://github.com/express42/reddit.git $APP_DIR/reddit
 cd $APP_DIR/reddit
 bundle install
