@@ -15,6 +15,10 @@ apt-get update
 # Install mongodb
 apt-get install -y mongodb-org
 
+#Install useful packets
+apt-get update
+apt-get install -y python git
+
 # Start mongodb service
 systemctl start mongod
 

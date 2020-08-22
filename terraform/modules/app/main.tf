@@ -34,7 +34,7 @@ resource "yandex_compute_instance" "app" {
     private_key = file(var.private_key_path)
   }
 
-  provisioner "file" {
+  /*provisioner "file" {
     source      = "../modules/app/puma.service"
     destination = "/tmp/puma.service"
   }
@@ -48,5 +48,5 @@ resource "yandex_compute_instance" "app" {
   provisioner "remote-exec" {
     script = "../modules/app/deploy.sh"
   }
-
+*/
 }
