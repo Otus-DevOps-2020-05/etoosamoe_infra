@@ -1,6 +1,6 @@
 {
     "cloud_folder_id": "cloudfolderid",
-    "service_account_key_file_path": "files/key.json",
+    "service_account_key_file_path": "packer/files/key.json",
     "source_image_family_name": "ubuntu-1604-lts",
 
     "image_name": "reddit-base-{{timestamp}}",
