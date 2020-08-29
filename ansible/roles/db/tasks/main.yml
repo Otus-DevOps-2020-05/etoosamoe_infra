@@ -1,0 +1,16 @@
+---
+- name: Show info about the env this host belongs to
+  debug:
+    msg: "This is {{ env }} environment!"
+- name: Install dependecies
+  apt:
+    pkg:
+      - git
+      - python
+    state: present
+- name: mongodb config file
+  template:
+    src: "mongod.conf.j2"
+    dest: /etc/mongod.conf
+    mode: 0644
+  notify: restart mongod

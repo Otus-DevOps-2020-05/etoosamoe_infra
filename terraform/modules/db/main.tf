@@ -1,5 +1,5 @@
 resource "yandex_compute_instance" "db" {
-  name = "reddit-db"
+  name = "reddit-db-${var.env}"
   labels = {
     tags = "reddit-db"
   }

@@ -1,6 +1,6 @@
 resource "yandex_compute_instance" "app" {
   count = var.lb_count
-  name = "reddit-app-${count.index}"
+  name = "reddit-app-${var.env}-${count.index}"
 
   labels = {
     tags = "reddit-app"
