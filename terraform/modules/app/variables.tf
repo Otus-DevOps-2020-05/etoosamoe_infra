@@ -12,7 +12,9 @@ variable lb_count {
   description = "Balancer Count"
   default     = "1"
 }
-
+variable env {
+  description = "Prod or Stage"
+}
 variable db_ip {
   description = "db ip-address"
 }

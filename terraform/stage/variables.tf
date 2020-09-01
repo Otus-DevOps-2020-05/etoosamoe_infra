@@ -46,3 +46,6 @@ variable storage_secret_key {
 variable storage_sa_id {
   description = "SERVICE ACCOUNT ID"
 }
+variable env {
+  description = "Prod or Stage"
+}

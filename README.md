@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Otus-DevOps-2020-05/etoosamoe_infra.svg?branch=master)](https://travis-ci.com/Otus-DevOps-2020-05/etoosamoe_infra)
+
 # etoosamoe_infra
 etoosamoe Infra repository
 
@@ -102,3 +104,10 @@ yc compute instance create \
  - разбил на маленькие
  - переделал образы пакера на ансибл
  - то ли еще будет...
+
+## ДЗ Ansible 3
+
+ - Начуился работать с ansible-galaxy, хотя бы в части правильного разбрасывания файлов по папкам
+ - Раскидал всё по нужным environments
+ - Добавили плейбук для создания пользователей и зашифровали креды через ansible-vault
+ - Добавил название окружения в имя инстансов, завязал на это скрипт динамического инвентори

@@ -16,3 +16,6 @@ variable lb_count {
 variable private_key_path {
   description = "path to private key"
 }
+variable env {
+  description = "Prod or Stage"
+}
