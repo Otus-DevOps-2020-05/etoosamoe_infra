@@ -1,0 +1,29 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "{{user `service_account_key_file_path`}}",
+            "folder_id": "{{user `cloud_folder_id`}}",
+            "source_image_family": "{{user `source_image_family_name`}}",
+
+            "image_name": "docker-{{timestamp}}",
+            "image_family": "docker",
+            "image_description": "docker image",
+
+            "ssh_username": "{{user `ssh_username`}}",
+            "platform_id": "standard-v1",
+            "use_ipv4_nat": true,
+            "disk_type": "network-ssd"
+        }
+    ],
+    "provisioners": [
+        {
+          "type": "shell",
+          "inline": "sleep 30"
+        },
+        {
+          "type": "ansible",
+          "playbook_file": "ansible/playbooks/packer_db.yml"
+        }
+      ]
+}
