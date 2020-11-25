@@ -4,6 +4,7 @@
   become: true
   vars:
     db_host: 192.168.10.3
+    deploy_user: ubuntu
   tasks:
 
     - name: fetch last version of app code
@@ -15,7 +16,7 @@
     - name: bundle install
       bundler:
         state: present
-        chdir: /home/ubuntu/reddit
+        chdir: /home/{{ deploy_user }}/reddit
       notify: reload puma
   handlers:
   - name: reload puma
